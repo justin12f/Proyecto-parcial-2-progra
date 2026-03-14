@@ -1,0 +1,618 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>720</width>
+    <height>580</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Interfaz para el programa 1</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <property name="styleSheet">
+    <string>
+     QWidget#centralwidget {
+       background-color: #f0f0f0;
+     }
+    </string>
+   </property>
+   <layout class="QVBoxLayout" name="layout_main">
+    <property name="spacing">
+     <number>12</number>
+    </property>
+    <property name="contentsMargins" stdset="0">
+     <number>20</number>
+    </property>
+    <item>
+     <widget class="QLabel" name="lbl_window_title">
+      <property name="styleSheet">
+       <string>
+        QLabel#lbl_window_title {
+          font-size: 22px;
+          font-weight: bold;
+          color: #1a1a2e;
+          padding: 6px 0px;
+        }
+       </string>
+      </property>
+      <property name="text">
+       <string>Interfaz para Regresion Lineal </string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frm_results_panel">
+      <property name="styleSheet">
+       <string>
+        QFrame#frm_results_panel {
+          background-color: #d6d6d6;
+          border: 1px solid #999999;
+          border-radius: 6px;
+        }
+       </string>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="layout_panel">
+       <property name="spacing">
+        <number>16</number>
+       </property>
+       <property name="contentsMargins" stdset="0">
+        <number>20</number>
+       </property>
+       <item>
+        <layout class="QGridLayout" name="layout_buttons">
+         <property name="horizontalSpacing">
+          <number>16</number>
+         </property>
+         <property name="verticalSpacing">
+          <number>10</number>
+         </property>
+         <item row="0" column="0">
+          <widget class="QPushButton" name="btn_test_1">
+           <property name="styleSheet">
+            <string>
+             QPushButton {
+               background-color: #8a9bb5;
+               color: white;
+               font-size: 13px;
+               font-weight: bold;
+               border: none;
+               border-radius: 8px;
+               padding: 6px 18px;
+             }
+             QPushButton:hover {
+               background-color: #6e85a3;
+             }
+             QPushButton:pressed {
+               background-color: #536b8a;
+             }
+            </string>
+           </property>
+           <property name="text">
+            <string>Caso de prueba 1</string>
+           </property>
+          </widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QPushButton" name="btn_test_2">
+           <property name="styleSheet">
+            <string>
+             QPushButton {
+               background-color: #8a9bb5;
+               color: white;
+               font-size: 13px;
+               font-weight: bold;
+               border: none;
+               border-radius: 8px;
+               padding: 6px 18px;
+             }
+             QPushButton:hover {
+               background-color: #6e85a3;
+             }
+             QPushButton:pressed {
+               background-color: #536b8a;
+             }
+            </string>
+           </property>
+           <property name="text">
+            <string>Caso de prueba 2</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="0">
+          <widget class="QPushButton" name="btn_test_3">
+           <property name="styleSheet">
+            <string>
+             QPushButton {
+               background-color: #8a9bb5;
+               color: white;
+               font-size: 13px;
+               font-weight: bold;
+               border: none;
+               border-radius: 8px;
+               padding: 6px 18px;
+             }
+             QPushButton:hover {
+               background-color: #6e85a3;
+             }
+             QPushButton:pressed {
+               background-color: #536b8a;
+             }
+            </string>
+           </property>
+           <property name="text">
+            <string>Caso de prueba 3</string>
+           </property>
+          </widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QPushButton" name="btn_test_4">
+           <property name="styleSheet">
+            <string>
+             QPushButton {
+               background-color: #8a9bb5;
+               color: white;
+               font-size: 13px;
+               font-weight: bold;
+               border: none;
+               border-radius: 8px;
+               padding: 6px 18px;
+             }
+             QPushButton:hover {
+               background-color: #6e85a3;
+             }
+             QPushButton:pressed {
+               background-color: #536b8a;
+             }
+            </string>
+           </property>
+           <property name="text">
+            <string>Caso de prueba 4</string>
+           </property>
+          </widget>
+         </item>
+        </layout>
+       </item>
+       <item>
+        <widget class="QFrame" name="line_separator">
+         <property name="styleSheet">
+          <string>color: #aaaaaa;</string>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::HLine</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Sunken</enum>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lbl_results_title">
+         <property name="styleSheet">
+          <string>
+           QLabel#lbl_results_title {
+             font-size: 16px;
+             font-weight: bold;
+             color: #1a1a2e;
+           }
+          </string>
+         </property>
+         <property name="text">
+          <string>Resultados</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <layout class="QHBoxLayout" name="layout_columns">
+         <property name="spacing">
+          <number>20</number>
+         </property>
+         <item>
+          <widget class="QFrame" name="frm_real">
+           <property name="styleSheet">
+            <string>
+             QFrame#frm_real {
+               background-color: #e8e8e8;
+               border: 1px solid #bbbbbb;
+               border-radius: 4px;
+             }
+            </string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <layout class="QVBoxLayout" name="layout_real">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="contentsMargins" stdset="0">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lbl_title_real">
+              <property name="styleSheet">
+               <string>
+                QLabel {
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #333333;
+                  padding-bottom: 4px;
+                }
+               </string>
+              </property>
+              <property name="text">
+               <string>Valor real</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="row_real_b0">
+              <item>
+               <widget class="QLabel" name="lbl_key_real_b0">
+                <property name="styleSheet">
+                 <string>font-size:12px; color:#444;</string>
+                </property>
+                <property name="text">
+                 <string>B0 =</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lbl_real_b0">
+                <property name="styleSheet">
+                 <string>font-size:12px; font-weight:bold; color:#1a1a2e;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="row_real_b1">
+              <item>
+               <widget class="QLabel" name="lbl_key_real_b1">
+                <property name="styleSheet">
+                 <string>font-size:12px; color:#444;</string>
+                </property>
+                <property name="text">
+                 <string>B1 =</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lbl_real_b1">
+                <property name="styleSheet">
+                 <string>font-size:12px; font-weight:bold; color:#1a1a2e;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="row_real_rxy">
+              <item>
+               <widget class="QLabel" name="lbl_key_real_rxy">
+                <property name="styleSheet">
+                 <string>font-size:12px; color:#444;</string>
+                </property>
+                <property name="text">
+                 <string>rxy =</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lbl_real_rxy">
+                <property name="styleSheet">
+                 <string>font-size:12px; font-weight:bold; color:#1a1a2e;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="row_real_r2">
+              <item>
+               <widget class="QLabel" name="lbl_key_real_r2">
+                <property name="styleSheet">
+                 <string>font-size:12px; color:#444;</string>
+                </property>
+                <property name="text">
+                 <string>r2 =</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lbl_real_r2">
+                <property name="styleSheet">
+                 <string>font-size:12px; font-weight:bold; color:#1a1a2e;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="row_real_yk">
+              <item>
+               <widget class="QLabel" name="lbl_key_real_yk">
+                <property name="styleSheet">
+                 <string>font-size:12px; color:#444;</string>
+                </property>
+                <property name="text">
+                 <string>Yk =</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lbl_real_yk">
+                <property name="styleSheet">
+                 <string>font-size:12px; font-weight:bold; color:#1a1a2e;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+         <item>
+          <widget class="QFrame" name="frm_calc">
+           <property name="styleSheet">
+            <string>
+             QFrame#frm_calc {
+               background-color: #e8e8e8;
+               border: 1px solid #bbbbbb;
+               border-radius: 4px;
+             }
+            </string>
+           </property>
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <layout class="QVBoxLayout" name="layout_calc">
+            <property name="spacing">
+             <number>6</number>
+            </property>
+            <property name="contentsMargins" stdset="0">
+             <number>10</number>
+            </property>
+            <item>
+             <widget class="QLabel" name="lbl_title_calc">
+              <property name="styleSheet">
+               <string>
+                QLabel {
+                  font-size: 13px;
+                  font-weight: bold;
+                  color: #333333;
+                  padding-bottom: 4px;
+                }
+               </string>
+              </property>
+              <property name="text">
+               <string>Valor actual</string>
+              </property>
+              <property name="alignment">
+               <set>Qt::AlignCenter</set>
+              </property>
+             </widget>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="row_calc_b0">
+              <item>
+               <widget class="QLabel" name="lbl_key_calc_b0">
+                <property name="styleSheet">
+                 <string>font-size:12px; color:#444;</string>
+                </property>
+                <property name="text">
+                 <string>B0 =</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lbl_calc_b0">
+                <property name="styleSheet">
+                 <string>font-size:12px; font-weight:bold; color:#1a4d2e;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="row_calc_b1">
+              <item>
+               <widget class="QLabel" name="lbl_key_calc_b1">
+                <property name="styleSheet">
+                 <string>font-size:12px; color:#444;</string>
+                </property>
+                <property name="text">
+                 <string>B1 =</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lbl_calc_b1">
+                <property name="styleSheet">
+                 <string>font-size:12px; font-weight:bold; color:#1a4d2e;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="row_calc_rxy">
+              <item>
+               <widget class="QLabel" name="lbl_key_calc_rxy">
+                <property name="styleSheet">
+                 <string>font-size:12px; color:#444;</string>
+                </property>
+                <property name="text">
+                 <string>rxy =</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lbl_calc_rxy">
+                <property name="styleSheet">
+                 <string>font-size:12px; font-weight:bold; color:#1a4d2e;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="row_calc_r2">
+              <item>
+               <widget class="QLabel" name="lbl_key_calc_r2">
+                <property name="styleSheet">
+                 <string>font-size:12px; color:#444;</string>
+                </property>
+                <property name="text">
+                 <string>r2 =</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lbl_calc_r2">
+                <property name="styleSheet">
+                 <string>font-size:12px; font-weight:bold; color:#1a4d2e;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+            <item>
+             <layout class="QHBoxLayout" name="row_calc_yk">
+              <item>
+               <widget class="QLabel" name="lbl_key_calc_yk">
+                <property name="styleSheet">
+                 <string>font-size:12px; color:#444;</string>
+                </property>
+                <property name="text">
+                 <string>Yk =</string>
+                </property>
+               </widget>
+              </item>
+              <item>
+               <widget class="QLabel" name="lbl_calc_yk">
+                <property name="styleSheet">
+                 <string>font-size:12px; font-weight:bold; color:#1a4d2e;</string>
+                </property>
+                <property name="text">
+                 <string/>
+                </property>
+                <property name="alignment">
+                 <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+                </property>
+               </widget>
+              </item>
+             </layout>
+            </item>
+           </layout>
+          </widget>
+         </item>
+        </layout>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <spacer name="spacer_bottom">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>10</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>720</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
