@@ -17,14 +17,20 @@ class Logic :
         
 
 
-    def t_distr( self , dof  ) : 
+    def t_distr(self, x):
+        dof = self.dof
         gamma = math.gamma
-        numerador =  gamma( ( dof + 1 ) / 2 )  * ( ( 1 + ( self.x**2 / ( dof ) )** (-( self.dof + 1) / 2 ) ) ) 
-        denominador = ( ( self.dof * math.pi ) ** 1/2 ) * gamma( self.dof/2 )
+        pi = math.pi
         
-        r_value = numerador / denominador 
-        return r_value
+        num_const = gamma((dof + 1) / 2)
+        
+        den_const = ((dof * pi) ** 0.5) * gamma(dof / 2)
+        
+        term_potencia = (1 + (x**2 / dof)) ** (-(dof + 1) / 2)
+        
+        r_value = (num_const / den_const) * term_potencia
 
+        return r_value
 
     def sumatorias ( self , num_seg ) : 
         t_distr = self.t_distr
@@ -34,10 +40,10 @@ class Logic :
 
         for i in range( 0 , num_seg ) : 
             if i % 2  : 
-                value1 =  4 * t_distr( i * W , self.dof )
+                value1 =  4 * t_distr( i * W  )
                 valuelist1.append( value1)
             else :
-                value2 =  2 * t_distr( i * W  , self.dof )
+                value2 =  2 * t_distr( i * W  )
                 valuelist2.append( value2 )
 
         sum1 = sum( valuelist1 )
@@ -71,10 +77,6 @@ class Logic :
         return p1 
     
 
-obj = Logic(1.1 , 9 )
-print( " isuafghsiu")
-print(obj.p)
-        
 
 
 
