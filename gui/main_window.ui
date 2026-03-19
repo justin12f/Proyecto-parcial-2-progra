@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1100</width>
+    <height>700</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Proyectos de Métodos Numéricos</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow {
+    background-color: #0d1117;
+}
+QWidget#centralwidget {
+    background-color: #0d1117;
+}
+QLabel#lblTitulo {
+    color: #58a6ff;
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Segoe UI";
+    padding: 8px 0px;
+}
+QLabel#lblSubtitulo {
+    color: #8b949e;
+    font-size: 12px;
+    font-family: "Segoe UI";
+}
+QLabel#lblProyectos {
+    color: #c9d1d9;
+    font-size: 13px;
+    font-weight: bold;
+    font-family: "Segoe UI";
+    padding: 4px 0px;
+}
+QPushButton#btnRegresion {
+    background-color: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    text-align: left;
+    padding: 20px 24px;
+}
+QPushButton#btnRegresion:hover {
+    background-color: #1f2937;
+    border: 1px solid #58a6ff;
+    color: #58a6ff;
+}
+QPushButton#btnRegresion:pressed {
+    background-color: #0d1117;
+    border: 1px solid #1f6feb;
+}
+QPushButton#btnIntegracion {
+    background-color: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    text-align: left;
+    padding: 20px 24px;
+}
+QPushButton#btnIntegracion:hover {
+    background-color: #1f2937;
+    border: 1px solid #3fb950;
+    color: #3fb950;
+}
+QPushButton#btnIntegracion:pressed {
+    background-color: #0d1117;
+    border: 1px solid #238636;
+}
+QFrame#lineaSeparador {
+    color: #21262d;
+}
+QStatusBar {
+    background-color: #161b22;
+    color: #8b949e;
+    font-family: "Segoe UI";
+    font-size: 11px;
+    border-top: 1px solid #21262d;
+}
+QMenuBar {
+    background-color: #161b22;
+    color: #c9d1d9;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    border-bottom: 1px solid #21262d;
+}
+QMenuBar::item:selected {
+    background-color: #21262d;
+    color: #58a6ff;
+}
+QMenu {
+    background-color: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    font-family: "Segoe UI";
+}
+QMenu::item:selected {
+    background-color: #21262d;
+    color: #58a6ff;
+}
+   </string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="contentsMargins">
+     <number>40</number>
+     <number>32</number>
+     <number>40</number>
+     <number>32</number>
+    </property>
+
+    <!-- ENCABEZADO -->
+    <item>
+     <layout class="QHBoxLayout" name="layoutHeader">
+      <item>
+       <layout class="QVBoxLayout" name="layoutTitulos">
+        <item>
+         <widget class="QLabel" name="lblTitulo">
+          <property name="text">
+           <string>⚙  Métodos Numéricos</string>
+          </property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QLabel" name="lblSubtitulo">
+          <property name="text">
+           <string>Selecciona un proyecto para comenzar</string>
+          </property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+      <item>
+       <spacer name="spacerHeader">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </spacer>
+      </item>
+     </layout>
+    </item>
+
+    <!-- SEPARADOR -->
+    <item>
+     <widget class="QFrame" name="lineaSeparador">
+      <property name="frameShape">
+       <enum>QFrame::HLine</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Sunken</enum>
+      </property>
+     </widget>
+    </item>
+
+    <!-- ESPACIADO SUPERIOR -->
+    <item>
+     <spacer name="spacerTop">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>24</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+
+    <!-- ETIQUETA SECCIÓN -->
+    <item>
+     <widget class="QLabel" name="lblProyectos">
+      <property name="text">
+       <string>PROYECTOS DISPONIBLES</string>
+      </property>
+     </widget>
+    </item>
+
+    <item>
+     <spacer name="spacerMid">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>10</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+
+    <!-- TARJETAS DE PROYECTOS -->
+    <item>
+     <layout class="QHBoxLayout" name="layoutTarjetas">
+      <property name="spacing">
+       <number>24</number>
+      </property>
+
+      <!-- TARJETA: REGRESIÓN LINEAL -->
+      <item>
+       <widget class="QPushButton" name="btnRegresion">
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>160</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>480</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>📈  Regresión Lineal
+
+Ajuste de curvas y modelos
+lineales por mínimos cuadrados</string>
+        </property>
+        <property name="toolTip">
+         <string>Abrir módulo de Regresión Lineal</string>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+       </widget>
+      </item>
+
+      <!-- TARJETA: INTEGRACIÓN NUMÉRICA -->
+      <item>
+       <widget class="QPushButton" name="btnIntegracion">
+        <property name="minimumSize">
+         <size>
+          <width>300</width>
+          <height>160</height>
+         </size>
+        </property>
+        <property name="maximumSize">
+         <size>
+          <width>480</width>
+          <height>200</height>
+         </size>
+        </property>
+        <property name="text">
+         <string>∫  Integración Numérica
+
+Métodos de cuadratura numérica:
+Trapecio, Simpson y más</string>
+        </property>
+        <property name="toolTip">
+         <string>Abrir módulo de Integración Numérica</string>
+        </property>
+        <property name="cursor">
+         <cursorShape>PointingHandCursor</cursorShape>
+        </property>
+       </widget>
+      </item>
+
+      <!-- ESPACIO A LA DERECHA -->
+      <item>
+       <spacer name="spacerRight">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+       </spacer>
+      </item>
+
+     </layout>
+    </item>
+
+    <!-- ESPACIADO INFERIOR -->
+    <item>
+     <spacer name="spacerBottom">
+      <property name="orientation">
+       <enum>Qt::Vertical</enum>
+      </property>
+      <property name="sizeHint" stdset="0">
+       <size>
+        <width>20</width>
+        <height>40</height>
+       </size>
+      </property>
+     </spacer>
+    </item>
+
+   </layout>
+  </widget>
+
+  <!-- MENÚ BAR -->
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1100</width>
+     <height>26</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menuArchivo">
+    <property name="title">
+     <string>Archivo</string>
+    </property>
+    <addaction name="actionSalir"/>
+   </widget>
+   <widget class="QMenu" name="menuProyectos">
+    <property name="title">
+     <string>Proyectos</string>
+    </property>
+    <addaction name="actionRegresion"/>
+    <addaction name="actionIntegracion"/>
+   </widget>
+   <widget class="QMenu" name="menuAyuda">
+    <property name="title">
+     <string>Ayuda</string>
+    </property>
+    <addaction name="actionAcercaDe"/>
+   </widget>
+   <addaction name="menuArchivo"/>
+   <addaction name="menuProyectos"/>
+   <addaction name="menuAyuda"/>
+  </widget>
+
+  <!-- STATUS BAR -->
+  <widget class="QStatusBar" name="statusbar"/>
+
+ </widget>
+
+ <!-- ACCIONES -->
+ <action name="actionSalir">
+  <property name="text">
+   <string>Salir</string>
+  </property>
+  <property name="shortcut">
+   <string>Ctrl+Q</string>
+  </property>
+ </action>
+ <action name="actionRegresion">
+  <property name="text">
+   <string>Regresión Lineal</string>
+  </property>
+ </action>
+ <action name="actionIntegracion">
+  <property name="text">
+   <string>Integración Numérica</string>
+  </property>
+ </action>
+ <action name="actionAcercaDe">
+  <property name="text">
+   <string>Acerca de</string>
+  </property>
+ </action>
+
+ <resources/>
+ <connections/>
+</ui>
