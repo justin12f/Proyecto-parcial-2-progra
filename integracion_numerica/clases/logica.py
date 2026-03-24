@@ -10,7 +10,7 @@ class Logic :
         self.x = x 
         self.dof = dof 
         self.num_seg = 10 
-        self.E = 0.00001
+        self.E = 0.0000001
         self.p = self.p()
         
        
@@ -51,31 +51,32 @@ class Logic :
 
         return sum1 , sum2 
     
-    def p ( self ) : 
-        num_seg1 = self.num_seg
-        num_seg2 = self.num_seg**2
+    def p(self):
+        num_seg = self.num_seg
+        F0 = self.t_distr(0)
+        FX = self.t_distr(self.x)
 
-        W1= ( self.x / num_seg1 ) / 3 
-        W2= ( self.x / num_seg2 ) / 3 
+        def simpson(n):
+            W = self.x / n
+            sum1, sum2 = 0, 0
 
-        sum1 , sum2 = self.sumatorias( num_seg1 )
-        sum11 , sum22 = self.sumatorias( num_seg2 )
-        F0 = self.t_distr( 0 )
-        FX = self.t_distr( self.x )
+            for i in range(1, n):
+                if i % 2 == 0:
+                    sum2 += 2 * self.t_distr(i * W)
+                else:
+                    sum1 += 4 * self.t_distr(i * W)
 
-        p1= W1*( F0 + sum1 + sum2 + FX )
-        p2 = W2*( F0 + sum11 + sum22 + FX )
+            return (W / 3) * (F0 + sum1 + sum2 + FX)
 
-        while ( abs( p1 ) - abs( p2 ) ) > self.E :
-            p1 = p2 
+        p1 = simpson(num_seg)
+        p2 = simpson(num_seg * 2)
 
-            self.num_seg *= 2
-            sum1 , sum2 = self.sumatorias( self.num_seg )
+        while abs(p1 - p2) > self.E:
+            num_seg *= 2
+            p1 = p2
+            p2 = simpson(num_seg * 2)
 
-            p2 = W1*( F0 + sum1 + sum2 + FX )
-
-        return p1 
-    
+        return p2
 
 
 

@@ -8,10 +8,10 @@ class LoadPrincipal ( QtWidgets.QMainWindow ) :
         uic.loadUi( "gui/main_window.ui"  , self )
         self.show() 
 
-        self.actionRegresion.triggered.connect( self.regresion )
-        self.actionIntegracion.triggered.connect( self.integracion )
-        self.btnIntegracion.clicked.connect( self.regresion )
-        self.btnRegresion.clicked.connect( self.integracion )
+        self.actionRegresion.triggered.connect( self.integracion )
+        self.actionIntegracion.triggered.connect( self.regresion)
+        self.btnIntegracion.clicked.connect( self.integracion )
+        self.btnRegresion.clicked.connect( self.regresion )
         
  
 

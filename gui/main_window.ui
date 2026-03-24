@@ -125,12 +125,12 @@ QMenu::item:selected {
   </action>
   <action name="actionRegresion">
    <property name="text">
-    <string>Regresion Lineal</string>
+    <string>Integracion Numerica</string>
    </property>
   </action>
   <action name="actionIntegracion">
    <property name="text">
-    <string>Integracion Numerica</string>
+    <string>Regresion Lineal</string>
    </property>
   </action>
   <action name="actionAcercaDe">
