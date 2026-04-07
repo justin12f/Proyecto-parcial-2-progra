@@ -19,16 +19,11 @@ class Logic :
 
     def t_distr(self, x):
         dof = self.dof
-        gamma = math.gamma
-        pi = math.pi
-        
-        num_const = gamma((dof + 1) / 2)
-        
-        den_const = ((dof * pi) ** 0.5) * gamma(dof / 2)
+        log_const = math.lgamma((dof + 1) / 2) - (0.5 * math.log(dof * math.pi)) - math.lgamma(dof / 2)
         
         term_potencia = (1 + (x**2 / dof)) ** (-(dof + 1) / 2)
         
-        r_value = (num_const / den_const) * term_potencia
+        r_value = math.exp(log_const) * term_potencia
 
         return r_value
 
