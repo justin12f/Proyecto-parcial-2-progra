@@ -100,6 +100,26 @@ QPushButton#btnIntegracionInversa:pressed {
     background-color: #0d1117;
     border: 1px solid #6e40c9;
 }
+QPushButton#btnSignificancia {
+    background-color: #161b22;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    text-align: left;
+    padding: 20px 24px;
+}
+QPushButton#btnSignificancia:hover {
+    background-color: #1f2937;
+    border: 1px solid #f0883e;
+    color: #f0883e;
+}
+QPushButton#btnSignificancia:pressed {
+    background-color: #0d1117;
+    border: 1px solid #c4612a;
+}
 QFrame#lineaSeparador {
     color: #21262d;
 }
@@ -156,6 +176,11 @@ QMenu::item:selected {
   <action name="actionIntegracionInversa">
    <property name="text">
     <string>Integracion Inversa</string>
+   </property>
+  </action>
+  <action name="actionSignificancia">
+   <property name="text">
+    <string>Significancia</string>
    </property>
   </action>
   <action name="actionAcercaDe">
@@ -336,33 +361,61 @@ Trapecio, Simpson y mas</string>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btnIntegracionInversa">
-        <property name="minimumSize">
-         <size>
-          <width>300</width>
-          <height>160</height>
-         </size>
-        </property>
-        <property name="maximumSize">
-         <size>
-          <width>480</width>
-          <height>200</height>
-         </size>
-        </property>
-        <property name="text">
-         <string>Integracion Inversa
+        <widget class="QPushButton" name="btnIntegracionInversa">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>160</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>480</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Integracion Inversa
 
 Calculo de variables inversas
 de una distribucion T</string>
-        </property>
-        <property name="toolTip">
-         <string>Abrir modulo de Integracion Inversa</string>
-        </property>
-        <property name="cursor">
-         <cursorShape>PointingHandCursor</cursorShape>
-        </property>
-       </widget>
-      </item>
+         </property>
+         <property name="toolTip">
+          <string>Abrir modulo de Integracion Inversa</string>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btnSignificancia">
+         <property name="minimumSize">
+          <size>
+           <width>300</width>
+           <height>160</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>480</width>
+           <height>200</height>
+          </size>
+         </property>
+         <property name="text">
+          <string>Significancia
+
+Intervalo de prediccion y
+prueba de significancia t</string>
+         </property>
+         <property name="toolTip">
+          <string>Abrir modulo de Prueba de Significancia</string>
+         </property>
+         <property name="cursor">
+          <cursorShape>PointingHandCursor</cursorShape>
+         </property>
+        </widget>
+       </item>
       <item>
        <spacer name="spacerRight">
         <property name="orientation">
@@ -424,6 +477,7 @@ de una distribucion T</string>
     <addaction name="actionRegresion"/>
     <addaction name="actionIntegracion"/>
     <addaction name="actionIntegracionInversa"/>
+    <addaction name="actionSignificancia"/>
    </widget>
    <widget class="QMenu" name="menuAyuda">
     <property name="title">

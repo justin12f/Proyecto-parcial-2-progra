@@ -1,0 +1,364 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SignificanciaWindow</class>
+ <widget class="QMainWindow" name="SignificanciaWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>820</width>
+    <height>720</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Prueba de Significancia e Intervalo de Prediccion</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow { background-color: #0d1117; }
+QWidget#centralwidget { background-color: #0d1117; }
+
+QLabel#lbl_titulo {
+    color: #f0883e;
+    font-size: 20px;
+    font-weight: bold;
+    font-family: "Segoe UI";
+    padding: 6px 0px;
+}
+QLabel#lbl_subtitulo {
+    color: #8b949e;
+    font-size: 11px;
+    font-family: "Segoe UI";
+}
+
+QGroupBox {
+    color: #c9d1d9;
+    font-family: "Segoe UI";
+    font-size: 12px;
+    font-weight: bold;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    margin-top: 10px;
+    padding-top: 14px;
+    background-color: #161b22;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    left: 12px;
+    padding: 0 4px;
+    color: #f0883e;
+}
+
+QLabel {
+    color: #c9d1d9;
+    font-family: "Segoe UI";
+    font-size: 11px;
+}
+QLineEdit {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 5px;
+    padding: 5px 8px;
+    font-family: "Segoe UI";
+    font-size: 11px;
+}
+QLineEdit:focus { border: 1px solid #f0883e; }
+QLineEdit[readOnly="true"] {
+    background-color: #161b22;
+    color: #3fb950;
+    border: 1px solid #238636;
+    font-weight: bold;
+}
+
+QPushButton#btn_calcular {
+    background-color: #f0883e;
+    color: #0d1117;
+    border: none;
+    border-radius: 7px;
+    font-size: 13px;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    padding: 9px 20px;
+}
+QPushButton#btn_calcular:hover { background-color: #e8762e; }
+QPushButton#btn_calcular:pressed { background-color: #c4612a; }
+
+QPushButton#btn_test1,
+QPushButton#btn_test2 {
+    background-color: #1f2937;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 7px;
+    font-size: 12px;
+    font-family: "Segoe UI";
+    font-weight: bold;
+    padding: 8px 16px;
+}
+QPushButton#btn_test1:hover { background-color: #263548; border: 1px solid #f0883e; color: #f0883e; }
+QPushButton#btn_test2:hover { background-color: #263548; border: 1px solid #3fb950; color: #3fb950; }
+QPushButton#btn_test1:pressed, QPushButton#btn_test2:pressed { background-color: #0d1117; }
+
+QFrame#sep { color: #21262d; }
+QStatusBar {
+    background-color: #161b22;
+    color: #8b949e;
+    font-family: "Segoe UI";
+    font-size: 11px;
+    border-top: 1px solid #21262d;
+}
+   </string>
+  </property>
+
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="layout_main">
+    <property name="spacing"><number>10</number></property>
+    <property name="leftMargin"><number>28</number></property>
+    <property name="topMargin"><number>22</number></property>
+    <property name="rightMargin"><number>28</number></property>
+    <property name="bottomMargin"><number>22</number></property>
+
+    <!-- Header -->
+    <item>
+     <layout class="QVBoxLayout" name="layout_header">
+      <property name="spacing"><number>3</number></property>
+      <item>
+       <widget class="QLabel" name="lbl_titulo">
+        <property name="text"><string>Prueba de Significancia e Intervalo de Prediccion (70%)</string></property>
+       </widget>
+      </item>
+      <item>
+       <widget class="QLabel" name="lbl_subtitulo">
+        <property name="text"><string>Correlacion de Pearson, area de cola t y prediccion por regresion lineal</string></property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+
+    <!-- Separator -->
+    <item>
+     <widget class="QFrame" name="sep">
+      <property name="frameShape"><enum>QFrame::HLine</enum></property>
+      <property name="frameShadow"><enum>QFrame::Sunken</enum></property>
+     </widget>
+    </item>
+
+    <!-- Test case buttons -->
+    <item>
+     <widget class="QGroupBox" name="grp_tests">
+      <property name="title"><string>Casos de Prueba</string></property>
+      <layout class="QHBoxLayout" name="layout_tests">
+       <property name="spacing"><number>16</number></property>
+       <property name="leftMargin"><number>14</number></property>
+       <property name="topMargin"><number>10</number></property>
+       <property name="rightMargin"><number>14</number></property>
+       <property name="bottomMargin"><number>14</number></property>
+       <item>
+        <widget class="QPushButton" name="btn_test1">
+         <property name="text"><string>Caso de Prueba 1&#10;X=Estimated  Y=Actual Added/Modified  xk=386</string></property>
+         <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_test2">
+         <property name="text"><string>Caso de Prueba 2&#10;X=Estimated  Y=Dev Hours  xk=386</string></property>
+         <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+
+    <!-- Inputs -->
+    <item>
+     <widget class="QGroupBox" name="grp_inputs">
+      <property name="title"><string>Datos de Entrada</string></property>
+      <layout class="QGridLayout" name="grid_inputs">
+       <property name="horizontalSpacing"><number>14</number></property>
+       <property name="verticalSpacing"><number>8</number></property>
+       <property name="leftMargin"><number>14</number></property>
+       <property name="topMargin"><number>10</number></property>
+       <property name="rightMargin"><number>14</number></property>
+       <property name="bottomMargin"><number>12</number></property>
+
+       <item row="0" column="0">
+        <widget class="QLabel" name="lbl_x">
+         <property name="text"><string>Valores X (separados por coma):</string></property>
+        </widget>
+       </item>
+       <item row="0" column="1">
+        <widget class="QLineEdit" name="input_x">
+         <property name="placeholderText"><string>ej: 130, 650, 99, 150, 128, 302, 95, 945, 368, 961</string></property>
+        </widget>
+       </item>
+
+       <item row="1" column="0">
+        <widget class="QLabel" name="lbl_y">
+         <property name="text"><string>Valores Y (separados por coma):</string></property>
+        </widget>
+       </item>
+       <item row="1" column="1">
+        <widget class="QLineEdit" name="input_y">
+         <property name="placeholderText"><string>ej: 186, 699, 132, 272, 291, 331, 199, 1890, 788, 1601</string></property>
+        </widget>
+       </item>
+
+       <item row="2" column="0">
+        <widget class="QLabel" name="lbl_xk">
+         <property name="text"><string>Valor xk (estimado a predecir):</string></property>
+        </widget>
+       </item>
+       <item row="2" column="1">
+        <widget class="QLineEdit" name="input_xk">
+         <property name="placeholderText"><string>ej: 386</string></property>
+        </widget>
+       </item>
+
+       <item row="3" column="1">
+        <widget class="QPushButton" name="btn_calcular">
+         <property name="text"><string>Calcular</string></property>
+         <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+        </widget>
+       </item>
+
+      </layout>
+     </widget>
+    </item>
+
+    <!-- Results: two columns -->
+    <item>
+     <layout class="QHBoxLayout" name="layout_results_cols">
+      <property name="spacing"><number>14</number></property>
+
+      <!-- Left: Significancia -->
+      <item>
+       <widget class="QGroupBox" name="grp_sig">
+        <property name="title"><string>Significancia de la Correlacion</string></property>
+        <layout class="QGridLayout" name="grid_sig">
+         <property name="horizontalSpacing"><number>12</number></property>
+         <property name="verticalSpacing"><number>8</number></property>
+         <property name="leftMargin"><number>14</number></property>
+         <property name="topMargin"><number>10</number></property>
+         <property name="rightMargin"><number>14</number></property>
+         <property name="bottomMargin"><number>12</number></property>
+
+         <item row="0" column="0">
+          <widget class="QLabel" name="lbl_k_rxy"><property name="text"><string>r (correlacion):</string></property></widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="out_rxy"><property name="readOnly"><bool>true</bool></property></widget>
+         </item>
+
+         <item row="1" column="0">
+          <widget class="QLabel" name="lbl_k_r2"><property name="text"><string>r² :</string></property></widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="out_r2"><property name="readOnly"><bool>true</bool></property></widget>
+         </item>
+
+         <item row="2" column="0">
+          <widget class="QLabel" name="lbl_k_tail"><property name="text"><string>Tail area (1-2p):</string></property></widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="out_tail"><property name="readOnly"><bool>true</bool></property></widget>
+         </item>
+
+         <item row="3" column="0">
+          <widget class="QLabel" name="lbl_k_concl"><property name="text"><string>Conclusion:</string></property></widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="out_conclusion"><property name="readOnly"><bool>true</bool></property></widget>
+         </item>
+
+        </layout>
+       </widget>
+      </item>
+
+      <!-- Right: Regresion + Prediccion -->
+      <item>
+       <widget class="QGroupBox" name="grp_pred">
+        <property name="title"><string>Regresion Lineal e Intervalo de Prediccion (70%)</string></property>
+        <layout class="QGridLayout" name="grid_pred">
+         <property name="horizontalSpacing"><number>12</number></property>
+         <property name="verticalSpacing"><number>8</number></property>
+         <property name="leftMargin"><number>14</number></property>
+         <property name="topMargin"><number>10</number></property>
+         <property name="rightMargin"><number>14</number></property>
+         <property name="bottomMargin"><number>12</number></property>
+
+         <item row="0" column="0">
+          <widget class="QLabel" name="lbl_k_b0"><property name="text"><string>β₀:</string></property></widget>
+         </item>
+         <item row="0" column="1">
+          <widget class="QLineEdit" name="out_b0"><property name="readOnly"><bool>true</bool></property></widget>
+         </item>
+
+         <item row="1" column="0">
+          <widget class="QLabel" name="lbl_k_b1"><property name="text"><string>β₁:</string></property></widget>
+         </item>
+         <item row="1" column="1">
+          <widget class="QLineEdit" name="out_b1"><property name="readOnly"><bool>true</bool></property></widget>
+         </item>
+
+         <item row="2" column="0">
+          <widget class="QLabel" name="lbl_k_yk"><property name="text"><string>yk = β₀ + β₁·xk :</string></property></widget>
+         </item>
+         <item row="2" column="1">
+          <widget class="QLineEdit" name="out_yk"><property name="readOnly"><bool>true</bool></property></widget>
+         </item>
+
+         <item row="3" column="0">
+          <widget class="QLabel" name="lbl_k_range"><property name="text"><string>Range (70%):</string></property></widget>
+         </item>
+         <item row="3" column="1">
+          <widget class="QLineEdit" name="out_range"><property name="readOnly"><bool>true</bool></property></widget>
+         </item>
+
+         <item row="4" column="0">
+          <widget class="QLabel" name="lbl_k_upi"><property name="text"><string>UPI (70%) = yk + Range:</string></property></widget>
+         </item>
+         <item row="4" column="1">
+          <widget class="QLineEdit" name="out_upi"><property name="readOnly"><bool>true</bool></property></widget>
+         </item>
+
+         <item row="5" column="0">
+          <widget class="QLabel" name="lbl_k_lpi"><property name="text"><string>LPI (70%) = yk - Range:</string></property></widget>
+         </item>
+         <item row="5" column="1">
+          <widget class="QLineEdit" name="out_lpi"><property name="readOnly"><bool>true</bool></property></widget>
+         </item>
+
+        </layout>
+       </widget>
+      </item>
+
+     </layout>
+    </item>
+
+    <!-- Error label -->
+    <item>
+     <widget class="QLabel" name="lbl_error">
+      <property name="text"><string></string></property>
+      <property name="styleSheet">
+       <string>color: #f85149; font-family: "Segoe UI"; font-size: 11px;</string>
+      </property>
+      <property name="alignment"><set>Qt::AlignCenter</set></property>
+     </widget>
+    </item>
+
+    <!-- Bottom spacer -->
+    <item>
+     <spacer name="spacerBottom">
+      <property name="orientation"><enum>Qt::Vertical</enum></property>
+      <property name="sizeType"><enum>QSizePolicy::Expanding</enum></property>
+      <property name="sizeHint" stdset="0"><size><width>20</width><height>10</height></size></property>
+     </spacer>
+    </item>
+
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
