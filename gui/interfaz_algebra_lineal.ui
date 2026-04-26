@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>InterfazAlgebra</class>
+ <widget class="QWidget" name="InterfazAlgebra">
+  <property name="geometry">
+   <rect><x>0</x><y>0</y><width>960</width><height>780</height></rect>
+  </property>
+  <property name="windowTitle">
+   <string>Álgebra Lineal — Métodos Numéricos</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QWidget {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: "Segoe UI";
+    font-size: 12px;
+}
+QGroupBox {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 8px;
+    margin-top: 14px;
+    padding-top: 10px;
+    font-size: 12px;
+    font-weight: bold;
+    color: #8b949e;
+}
+QGroupBox::title {
+    subcontrol-origin: margin;
+    subcontrol-position: top left;
+    padding: 0 8px;
+    color: #8b949e;
+    font-size: 11px;
+    letter-spacing: 1px;
+}
+QLabel#lblTitulo {
+    color: #e3b341;
+    font-size: 20px;
+    font-weight: bold;
+    padding: 4px 0;
+}
+QLabel#lblSubtitulo {
+    color: #8b949e;
+    font-size: 11px;
+}
+QLabel {
+    color: #8b949e;
+    font-size: 11px;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
+QPlainTextEdit {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 13px;
+    padding: 6px;
+    selection-background-color: #264f78;
+}
+QPlainTextEdit:focus {
+    border: 1px solid #e3b341;
+}
+QTextEdit {
+    background-color: #010409;
+    color: #c9d1d9;
+    border: 1px solid #21262d;
+    border-radius: 6px;
+    font-family: "Consolas", "Courier New", monospace;
+    font-size: 12px;
+    padding: 10px;
+    selection-background-color: #264f78;
+}
+QPushButton {
+    background-color: #21262d;
+    color: #c9d1d9;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 9px 14px;
+    min-height: 36px;
+}
+QPushButton:hover {
+    background-color: #30363d;
+    border: 1px solid #58a6ff;
+    color: #58a6ff;
+}
+QPushButton:pressed {
+    background-color: #161b22;
+}
+QPushButton#btn_calc_cramer {
+    background-color: #1a2332;
+    border: 1px solid #1f6feb;
+    color: #58a6ff;
+}
+QPushButton#btn_calc_cramer:hover {
+    background-color: #1f2d45;
+    border-color: #58a6ff;
+}
+QPushButton#btn_calc_multi {
+    background-color: #1a2b1a;
+    border: 1px solid #238636;
+    color: #3fb950;
+}
+QPushButton#btn_calc_multi:hover {
+    background-color: #1e3320;
+    border-color: #3fb950;
+}
+QPushButton#btn_calc_trans {
+    background-color: #231d30;
+    border: 1px solid #6e40c9;
+    color: #8957e5;
+}
+QPushButton#btn_calc_trans:hover {
+    background-color: #2a2040;
+    border-color: #8957e5;
+}
+QPushButton#btn_test_cramer, QPushButton#btn_test_multi, QPushButton#btn_test_trans {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    color: #6e7681;
+    font-size: 11px;
+    padding: 7px 10px;
+    min-height: 28px;
+}
+QPushButton#btn_test_cramer:hover {
+    border-color: #58a6ff;
+    color: #58a6ff;
+}
+QPushButton#btn_test_multi:hover {
+    border-color: #3fb950;
+    color: #3fb950;
+}
+QPushButton#btn_test_trans:hover {
+    border-color: #8957e5;
+    color: #8957e5;
+}
+QPushButton#btn_limpiar {
+    background-color: #2d1515;
+    border: 1px solid #6e2a2a;
+    color: #f85149;
+    font-size: 11px;
+    min-height: 28px;
+}
+QPushButton#btn_limpiar:hover {
+    background-color: #3d1c1c;
+    border-color: #f85149;
+}
+QFrame#lineaSep {
+    color: #21262d;
+}
+   </string>
+  </property>
+
+  <layout class="QVBoxLayout" name="mainLayout">
+   <property name="spacing"><number>12</number></property>
+   <property name="leftMargin"><number>20</number></property>
+   <property name="topMargin"><number>20</number></property>
+   <property name="rightMargin"><number>20</number></property>
+   <property name="bottomMargin"><number>20</number></property>
+
+   <!-- CABECERA -->
+   <item>
+    <layout class="QHBoxLayout">
+     <item>
+      <layout class="QVBoxLayout">
+       <property name="spacing"><number>2</number></property>
+       <item>
+        <widget class="QLabel" name="lblTitulo">
+         <property name="text"><string>Álgebra Lineal</string></property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QLabel" name="lblSubtitulo">
+         <property name="text"><string>Regla de Cramer  ·  Multiplicación de Matrices  ·  Transpuesta</string></property>
+        </widget>
+       </item>
+      </layout>
+     </item>
+     <item>
+      <spacer><property name="orientation"><enum>Qt::Horizontal</enum></property></spacer>
+     </item>
+    </layout>
+   </item>
+
+   <!-- SEPARADOR -->
+   <item>
+    <widget class="QFrame" name="lineaSep">
+     <property name="frameShape"><enum>QFrame::HLine</enum></property>
+     <property name="frameShadow"><enum>QFrame::Sunken</enum></property>
+    </widget>
+   </item>
+
+   <!-- ENTRADA DE MATRICES -->
+   <item>
+    <widget class="QGroupBox" name="groupInputs">
+     <property name="title"><string>ENTRADA DE MATRICES</string></property>
+     <layout class="QHBoxLayout" name="layoutInputs">
+      <property name="spacing"><number>16</number></property>
+      <property name="leftMargin"><number>16</number></property>
+      <property name="topMargin"><number>16</number></property>
+      <property name="rightMargin"><number>16</number></property>
+      <property name="bottomMargin"><number>16</number></property>
+
+      <item>
+       <layout class="QVBoxLayout">
+        <property name="spacing"><number>6</number></property>
+        <item>
+         <widget class="QLabel" name="lblA">
+          <property name="text"><string>MATRIZ A</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="input_matriz_a">
+          <property name="minimumSize"><size><width>380</width><height>120</height></size></property>
+          <property name="maximumSize"><size><width>16777215</width><height>140</height></size></property>
+          <property name="placeholderText"><string>Ej:  2, 1, -1
+-3, -1, 2
+-2, 1, 2</string></property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+
+      <item>
+       <layout class="QVBoxLayout">
+        <property name="spacing"><number>6</number></property>
+        <item>
+         <widget class="QLabel" name="lblB">
+          <property name="text"><string>MATRIZ B  /  VECTOR b</string></property>
+         </widget>
+        </item>
+        <item>
+         <widget class="QPlainTextEdit" name="input_matriz_b">
+          <property name="minimumSize"><size><width>280</width><height>120</height></size></property>
+          <property name="maximumSize"><size><width>16777215</width><height>140</height></size></property>
+          <property name="placeholderText"><string>Cramer → un número por fila
+Multiplicar → misma forma que A</string></property>
+         </widget>
+        </item>
+       </layout>
+      </item>
+
+     </layout>
+    </widget>
+   </item>
+
+   <!-- BOTONES DE OPERACIÓN -->
+   <item>
+    <widget class="QGroupBox" name="groupAcciones">
+     <property name="title"><string>OPERACIONES</string></property>
+     <layout class="QGridLayout" name="gridLayout">
+      <property name="horizontalSpacing"><number>12</number></property>
+      <property name="verticalSpacing"><number>10</number></property>
+      <property name="leftMargin"><number>16</number></property>
+      <property name="topMargin"><number>18</number></property>
+      <property name="rightMargin"><number>16</number></property>
+      <property name="bottomMargin"><number>16</number></property>
+
+      <!-- Fila 0: botones principales -->
+      <item row="0" column="0">
+       <widget class="QPushButton" name="btn_calc_cramer">
+        <property name="text"><string>▶  Resolver Cramer</string></property>
+        <property name="toolTip"><string>Resolver sistema Ax=b usando la Regla de Cramer</string></property>
+        <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QPushButton" name="btn_calc_multi">
+        <property name="text"><string>▶  Multiplicar A × B</string></property>
+        <property name="toolTip"><string>Calcular el producto matricial C = A × B</string></property>
+        <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+       </widget>
+      </item>
+      <item row="0" column="2">
+       <widget class="QPushButton" name="btn_calc_trans">
+        <property name="text"><string>▶  Transpuesta A</string></property>
+        <property name="toolTip"><string>Calcular la transpuesta Aᵀ de la Matriz A</string></property>
+        <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+       </widget>
+      </item>
+
+      <!-- Fila 1: botones de test -->
+      <item row="1" column="0">
+       <widget class="QPushButton" name="btn_test_cramer">
+        <property name="text"><string>⬡  Cargar Test Cramer</string></property>
+        <property name="toolTip"><string>Cargar caso de prueba del docx: sistema 3×3</string></property>
+        <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QPushButton" name="btn_test_multi">
+        <property name="text"><string>⬡  Cargar Test Multiplicar</string></property>
+        <property name="toolTip"><string>Cargar caso de prueba del docx: matrices 3×3</string></property>
+        <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+       </widget>
+      </item>
+      <item row="1" column="2">
+       <widget class="QPushButton" name="btn_test_trans">
+        <property name="text"><string>⬡  Cargar Test Transpuesta</string></property>
+        <property name="toolTip"><string>Cargar caso de prueba del docx: matriz 3×4</string></property>
+        <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+       </widget>
+      </item>
+
+      <!-- Fila 2: limpiar -->
+      <item row="2" column="1">
+       <widget class="QPushButton" name="btn_limpiar">
+        <property name="text"><string>✕  Limpiar</string></property>
+        <property name="cursor"><cursorShape>PointingHandCursor</cursorShape></property>
+       </widget>
+      </item>
+
+     </layout>
+    </widget>
+   </item>
+
+   <!-- SALIDA / LOG -->
+   <item>
+    <widget class="QTextEdit" name="output_log">
+     <property name="readOnly"><bool>true</bool></property>
+     <property name="minimumSize"><size><width>0</width><height>280</height></size></property>
+     <property name="placeholderText"><string>El procedimiento paso a paso aparecerá aquí...</string></property>
+    </widget>
+   </item>
+
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
